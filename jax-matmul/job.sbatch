@@ -1,9 +1,9 @@
 #!/bin/bash
 #SBATCH --job-name=jax-matmul
-#SBATCH --gres=gpu:1
+#SBATCH --gres=gpu:rtx-a4000:1
 #SBATCH --time=00:10:00
 
+#C3 PYTHON use --uv-lock ./uv.lock
 #C3 OUTPUT ./results
 
-pip install jax[cuda12] numpy
 python train.py

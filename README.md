@@ -25,5 +25,24 @@ c3 pull
 
 ## Examples
 
+### hello.sbatch
+
+Minimal "hello world" example. Prints system info and runs `nvidia-smi` to verify GPU access.
+
+```bash
+c3 deploy hello.sbatch
+```
+
 ### jax-matmul
-Simple JAX matrix multiplication benchmark. Tests GPU availability and performance.
+
+JAX matrix multiplication benchmark comparing loop-based vs vectorized (`jax.lax.scan`) approaches. Demonstrates GPU performance and generates a benchmark plot.
+
+Features:
+- Uses UV lockfile for reproducible dependencies
+- Loads matrices from data file
+- Outputs benchmark plot to `results/`
+
+```bash
+cd jax-matmul
+c3 deploy job.sbatch
+```

@@ -1,20 +1,20 @@
 # C3 Examples
 
-Example jobs for the [C3 GPU compute platform](https://github.com/samleeney/c3).
+Example jobs for the [C3 GPU compute platform](https://cthree.cloud).
 
 ## Quick Start
 
 ```bash
 # Install C3 CLI
-curl -fsSL https://raw.githubusercontent.com/samleeney/c3/main/install.sh | sh
+curl -fsSL https://cthree.cloud/install.sh | sh
 
 # Login
 c3 login
 
 # Clone and run an example
-git clone https://github.com/samleeney/c3-examples
+git clone https://github.com/c3-research/c3-examples.git
 cd c3-examples/jax-matmul
-c3 deploy job.sbatch
+c3 deploy
 
 # Check status
 c3 squeue
@@ -44,5 +44,5 @@ Features:
 
 ```bash
 cd jax-matmul
-c3 deploy job.sbatch
+c3 deploy
 ```

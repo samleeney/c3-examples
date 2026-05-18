@@ -6,4 +6,4 @@
 #C3 PYTHON use --project ./
 #C3 OUTPUT ./results
 
-python train.py
+python3 train.py

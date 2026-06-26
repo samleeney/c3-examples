@@ -1,0 +1,6 @@
+results/
+merged-results/
+job_*/
+shard-jobs.txt
+.c3-shards/
+__pycache__/

@@ -46,3 +46,14 @@ Features:
 cd jax-matmul
 c3 deploy
 ```
+
+### algorithm-discovery-loop
+
+Tiny dependency-free automated research example. It fans out candidate
+evaluations across multiple C3 GPU jobs, then merges the returned artifact
+leaderboards.
+
+```bash
+cd algorithm-discovery-loop
+python3 launch_shards.py --shards 3
+```

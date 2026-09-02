@@ -4,23 +4,34 @@ Example jobs for the [C3 GPU compute platform](https://cthree.cloud).
 
 ## Quick Start
 
+### For agents (MCP)
+
+C3 hosts an MCP server at `https://api.cthree.cloud/mcp`. Connect your coding agent to it and it can list hardware, deploy jobs, follow logs and collect results with nothing installed.
+
 ```bash
-# Install C3 CLI
-curl -fsSL https://cthree.cloud/install.sh | sh
+# Claude Code, browser login on first use (run /mcp and choose Authenticate)
+claude mcp add --transport http c3 https://api.cthree.cloud/mcp
 
-# Login
+# Headless: create a key with `c3 apikey create <name>` or on the dashboard
+claude mcp add --transport http c3 https://api.cthree.cloud/mcp \
+  --header "Authorization: Bearer c3_key_..."
+```
+
+Then, from an example directory, ask:
+
+> Deploy this directory to C3 on an l40, wait for it, and show me the results.
+
+Setup for Cursor, Codex, VS Code, claude.ai and ChatGPT is in the [MCP docs](https://docs.cthree.cloud/mcp).
+
+### For humans (CLI)
+
+```bash
+curl -fsSL https://cthree.cloud/install.sh | sh   # install
 c3 login
-
-# Clone and run an example
 git clone https://github.com/c3-research/c3-examples.git
 cd c3-examples/jax-matmul
-c3 deploy
-
-# Check status
-c3 squeue
-
-# Download results
-c3 pull
+c3 deploy -f   # submit and follow logs
+c3 pull        # download results
 ```
 
 ## Examples
